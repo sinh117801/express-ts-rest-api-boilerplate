@@ -1,12 +1,18 @@
-import { User } from '@models';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient({
+  errorFormat: 'pretty',
+});
 
 const list = async () => {
-  const users = await User.find();
+  const users = await prisma.user.findMany({ include: { posts: true } });
+
   return users;
 };
 
 const create = async (options: CreateOptions) => {
-  const user = await User.create(options);
+  const user = await prisma.user.create({ data: options });
+
   return user;
 };
 

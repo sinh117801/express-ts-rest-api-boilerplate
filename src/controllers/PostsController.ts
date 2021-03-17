@@ -1,11 +1,15 @@
+import PostService from '@services/PostService';
 import { RequestHandler } from 'express';
 
-const index: RequestHandler = (req, res) => {
-  res.json({ success: true, msg: 'List all Posts' });
+const index: RequestHandler = async (req, res) => {
+  const posts = await PostService.list();
+
+  res.json({ success: true, posts });
 };
 
-const create: RequestHandler = (req, res) => {
-  res.json({ success: true, msg: 'Create new Post' });
+const create: RequestHandler = async (req, res) => {
+  const post = await PostService.create(req.body);
+  res.json({ success: true, post });
 };
 
 const edit: RequestHandler = (req, res) => {

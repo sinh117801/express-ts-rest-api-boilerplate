@@ -1,14 +1,21 @@
 import { RequestHandler } from 'express';
 import UserService from '@services/UserService';
+import { BadRequestException } from '@libs/errors';
 
 const index: RequestHandler = async (req, res) => {
   const users = await UserService.list();
+
   res.json({ success: true, users });
 };
 
 const create: RequestHandler = async (req, res) => {
-  const user = await UserService.create(req.body);
-  res.json({ success: true, user });
+  try {
+    const user = await UserService.create(req.body);
+
+    res.json({ success: true, user });
+  } catch (error) {
+    throw new BadRequestException(error.meta.target);
+  }
 };
 
 const edit: RequestHandler = (req, res) => {

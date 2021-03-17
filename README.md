@@ -1,11 +1,13 @@
 # ExpressJS + Typescript (Boilerplate)
 
-All you have been looking for with ExpressJS + Typescript + MongoDB:
+>> **Note:** This repo is folk from https://github.com/sunhak-hout/express-ts-api-boilerplate which use MongoDB for database.
+
+All you have been looking for with ExpressJS + Typescript + Relational Database with Prisma:
 
 * Simple Clean Code Structure
 * Custom Error Handlings
 * Module Aliases
-* MongoDB Example
+* Prisma Example
 * Existing Sample Code
 
 ## Getting Started
@@ -17,8 +19,8 @@ These instructions will get you a copy of the project up and running on your loc
 Make sure your NodeJS and NPM on your local machine is up to date.
 
 ```
-node --version # v10.15.1
-npm --verions  # 6.9.0
+node --version # v14.16.0
+npm --verions  # 6.14.11
 ```
 
 ### Installing and Running
@@ -26,7 +28,7 @@ npm --verions  # 6.9.0
 Clone the project
 
 ```
-git clone https://github.com/sunhak-hout/express-ts-api-boilerplate.git
+git clone https://github.com/sinh117801/express-ts-api-boilerplate.git
 ```
 
 Move into the project folder
@@ -42,10 +44,11 @@ cp .env.example .env
 # set value of each variables in '.env' file
 ```
 
-Install dependencies and start
+Install dependencies, prisma migration and start
 
 ```
 npm install
+npx prisma migration dev
 npm run dev
 ```
 
@@ -55,7 +58,7 @@ All pull requests and feedbacks are welcome and appreciated ;)
 
 ## Author
 
-* **Sunhak Hout** - *Software Engineer* - [Bloo, Inc.](https://www.bloo.io)
+* **Sinh Noun** - *Javascript Developer* - [Mbanq Cloud](https://mbanq.com/cloud)
 
 ## Acknowledgments
 
