@@ -1,3 +1,4 @@
+import { BadRequestException } from '@libs/errors';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient({
@@ -11,6 +12,12 @@ const list = async () => {
 };
 
 const create = async (options: CreateOptions) => {
+  const existedUser = await prisma.user.findUnique({
+    where: { email: options.email },
+  });
+
+  if (existedUser) throw new BadRequestException('Email is already exited.');
+
   const user = await prisma.user.create({ data: options });
 
   return user;

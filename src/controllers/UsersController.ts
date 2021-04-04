@@ -1,6 +1,6 @@
 import { RequestHandler } from 'express';
 import UserService from '@services/UserService';
-import { BadRequestException } from '@libs/errors';
+import { prisma } from '@prisma/client';
 
 const index: RequestHandler = async (req, res) => {
   const users = await UserService.list();
@@ -9,13 +9,9 @@ const index: RequestHandler = async (req, res) => {
 };
 
 const create: RequestHandler = async (req, res) => {
-  try {
-    const user = await UserService.create(req.body);
+  const user = await UserService.create(req.body);
 
-    res.json({ success: true, user });
-  } catch (error) {
-    throw new BadRequestException(error.meta.target);
-  }
+  res.json({ success: true, user });
 };
 
 const edit: RequestHandler = (req, res) => {
