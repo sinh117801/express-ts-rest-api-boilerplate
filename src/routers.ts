@@ -1,3 +1,4 @@
+import AuthController from '@controllers/AuthController';
 import PingController from '@controllers/PingController';
 import PostsController from '@controllers/PostsController';
 import UsersController from '@controllers/UsersController';
@@ -8,6 +9,9 @@ export const router = AsyncRouter();
 
 // Server Health Check
 router.get('/ping', PingController.ping);
+
+// AuthController Routers
+router.post('/auth/login', AuthController.login);
 
 // UsersController Routers
 router.get('/users', UsersController.index);
