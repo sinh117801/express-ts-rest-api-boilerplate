@@ -2,6 +2,11 @@ import { verify, sign } from 'jsonwebtoken';
 const { JWT_SECRET } = process.env;
 
 interface SignPayload {
+  user: UserPayload;
+}
+
+interface UserPayload {
+  id: number;
   email: string;
 }
 

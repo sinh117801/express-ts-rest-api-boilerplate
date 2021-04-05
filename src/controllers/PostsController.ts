@@ -1,8 +1,8 @@
-import { RequestHandler } from 'express';
+import { Request, RequestHandler, Response } from 'express';
 
 import PostService from '@services/PostService';
 
-const index: RequestHandler = async (req, res) => {
+const index: RequestHandler = async (req: Request, res: Response) => {
   const posts = await PostService.list();
 
   res.json({ success: true, posts });

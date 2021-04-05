@@ -14,7 +14,7 @@ const login = async (input: LoginInput) => {
   if (!user || !comparePassword(password, user.password))
     throw new UnauthorizedException('Incorrect credential');
 
-  return signToken({ email });
+  return signToken({ user: { id: user.id, email: user.email } });
 };
 
 export default { login };

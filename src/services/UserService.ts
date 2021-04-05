@@ -7,7 +7,7 @@ const prisma = new PrismaClient({
 });
 
 const list = async () => {
-  const users = await prisma.user.findMany({ include: { posts: true } });
+  const users = await prisma.user.findMany({ select: { id: true, email: true, posts: true } });
 
   return users;
 };

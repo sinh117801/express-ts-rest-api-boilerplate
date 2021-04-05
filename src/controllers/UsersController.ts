@@ -1,6 +1,5 @@
 import { RequestHandler } from 'express';
 import UserService from '@services/UserService';
-import { prisma } from '@prisma/client';
 
 const index: RequestHandler = async (req, res) => {
   const users = await UserService.list();
