@@ -16,11 +16,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Make sure your NodeJS and NPM on your local machine is up to date.
+Make sure your NodeJS and NPM on your local machine is up to date. NodeJS LTS version is recommended.
 
 ```bash
-node --version # v14.16.0
-npm --verions  # 6.14.11
+node --version # v14.16.0 or above
+npm --version  # v6.14.11 or above
 ```
 
 ### Installing and Running
