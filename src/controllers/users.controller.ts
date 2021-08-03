@@ -1,16 +1,16 @@
 import { RequestHandler } from 'express';
-import UserService from '@services/UserService';
+import userService from '@services/user.service';
 
 const index: RequestHandler = async (req, res) => {
-  const users = await UserService.list();
+  const users = await userService.list();
 
   res.json({ success: true, users });
 };
 
 const create: RequestHandler = async (req, res) => {
-  const user = await UserService.create(req.body);
+  const user = await userService.create(req.body);
 
-  res.json({ success: true, user });
+  res.status(201).json({ success: true, data: user });
 };
 
 const edit: RequestHandler = (req, res) => {

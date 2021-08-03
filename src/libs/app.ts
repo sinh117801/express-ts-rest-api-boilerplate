@@ -1,5 +1,4 @@
-import { router } from '@routers';
-import bodyParser from 'body-parser';
+import router from '@routers';
 import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
@@ -11,7 +10,7 @@ export const app = express();
 app.use(morgan('tiny'));
 
 // Middlware: Parsing req.body into JSON
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Middleware: Enable CORS policy - Access-Control-Allow-Origin
 app.use(cors());

@@ -18,7 +18,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Make sure your NodeJS and NPM on your local machine is up to date.
 
-```
+```bash
 node --version # v14.16.0
 npm --verions  # 6.14.11
 ```
@@ -27,29 +27,35 @@ npm --verions  # 6.14.11
 
 Clone the project
 
-```
+```bash
 git clone https://github.com/sinh117801/express-ts-api-boilerplate.git
 ```
 
 Move into the project folder
 
-```
+```bash
 cd express-ts-api-boilerplate
 ```
 
 Config Environment Variables
 
-```
+```bash
 cp .env.example .env
 # set value of each variables in '.env' file
 ```
 
 Install dependencies, prisma migration and start
 
-```
+```bash
 npm install
 npx prisma migrate dev
 npm run dev
+```
+
+Seeding the data into database
+
+```bash
+npx prisma db seed --preview-feature
 ```
 
 ## Contributing

@@ -14,9 +14,9 @@
       "@libs/*": ["./src/libs/*"],
       "@services/*": ["./src/services/*"],
       "@models": ["./src/models.ts"],
-      "@routers": ["./src/routers.ts"]
+      "@routers": ["src/routers/index.ts"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "src/routers/index.ts"],
   "exclude": ["node_modules", "dist"]
 }
