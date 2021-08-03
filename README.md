@@ -48,7 +48,7 @@ Install dependencies, prisma migration and start
 
 ```
 npm install
-npx prisma migration dev
+npx prisma migrate dev
 npm run dev
 ```
 
