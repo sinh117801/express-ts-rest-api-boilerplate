@@ -1,6 +1,8 @@
 import { PrismaClient } from '@prisma/client';
 import { hashSync } from 'bcryptjs';
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  log: ['query'],
+});
 
 async function main() {
   // Init User

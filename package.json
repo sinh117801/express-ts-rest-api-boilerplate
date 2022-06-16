@@ -41,5 +41,8 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }
